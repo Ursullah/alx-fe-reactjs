@@ -28,14 +28,14 @@ function App() {
       <Header />
       <MainContent />
       <Footer />
-
-        <h1>Welcome to My App</h1>
-            <UserProfile 
-                name="John Doe" 
-                age={25} 
-                bio="I am a passionate React developer learning new things!" 
-              />
-      
+     
+      <h1>Welcome to My App</h1>
+      <UserProfile 
+        name="Alice" 
+        age={25} 
+        bio="Loves hiking and photography" 
+      />
+        
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}

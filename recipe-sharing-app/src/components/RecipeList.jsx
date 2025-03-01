@@ -1,5 +1,6 @@
 import React from "react";
-import useRecipeStore from "./recipeStore";
+import { Link } from "react-router-dom";
+import useRecipeStore from "../store/recipeStore";
 
 const RecipeList = () => {
   const { filteredRecipes, searchTerm, deleteRecipe } = useRecipeStore();
@@ -16,6 +17,7 @@ const RecipeList = () => {
           <div key={recipe.id} className="recipe-card">
             <h3>{recipe.title}</h3>
             <p>{recipe.description}</p>
+            <Link to={`/recipes/${recipe.id}`} className="view-details">View Details</Link>
             <button onClick={() => deleteRecipe(recipe.id)}>Delete</button>
           </div>
         ))

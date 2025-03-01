@@ -1,4 +1,4 @@
-import useRecipeStore from "../store/recipeStore"; // ✅ Correct import
+import useRecipeStore from "./recipeStore"; // ✅ Correct import
 import { useParams } from "react-router-dom";
 import EditRecipeForm from "./EditRecipeForm";
 import DeleteRecipeButton from "./DeleteRecipeButton";

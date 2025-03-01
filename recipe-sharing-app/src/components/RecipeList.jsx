@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import useRecipeStore from "../store/recipeStore"; // Ensure correct import
+import useRecipeStore from "./recipeStore"; // Ensure correct import
 
 const RecipeList = () => {
   const recipes = useRecipeStore((state) => state.recipes);

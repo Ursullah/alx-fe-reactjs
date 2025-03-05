@@ -8,20 +8,20 @@ const RegistrationForm = () => {
 
         //validate fields
         const validateForm = (e) =>{
-            const validationErrors={};
+            const validationErrors= {};
 
-            if(!username){
-                validationErrors.username = "username is required"
+            if (!username) {
+                validationErrors.username = "Username is required"
             }
-            if(!email){
-                validationErrors.email = "email is required"
+            if (!email) {
+                validationErrors.email = "Email is required"
             }else if (!/\S+@\S+\.\S+/.test(email)){
-                  validationErrors.email = "email is required"
+                  validationErrors.email = "Email is required"
             }
-            if(!password){
-                validationErrors.password = "password is required"
+            if (!password) {
+                validationErrors.password = "Password is required"
             } else if(password.length < 8 ){
-                validationErrors.password = "password should be 8 characters"
+                validationErrors.password = "Password should be 8 characters"
             }
         
         setErrors(validationErrors);

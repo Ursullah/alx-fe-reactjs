@@ -83,7 +83,7 @@ const RegistrationForm = () => {
             name="password"
             value={password}
             onChange={handleChange}
-            placeholder="********"
+            placeholder="12345678"
             />
             {errors.password && <span>{errors.password}</span>}
         

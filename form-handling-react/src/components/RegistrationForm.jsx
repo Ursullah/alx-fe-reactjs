@@ -1,42 +1,58 @@
 import {useState} from "react";
 
 const RegistrationForm = () => {
-    const[formData, setFormData] = useState({
-        username:'',
-         email:'', 
-         password:''
-    });
-    const [errors, setErrors] = useState({});
+    const[username, setUsername] = useState("");
+    const[email, setEmail] = useState("");
+    const[password, setPassword] = useState("");
+    const[errors, setErrors] = useState({});
 
+//handle input changes
     const handleChange = (e) => {
         const {name,value} = e.target;
-        setFormData(prevState => ({...prevState, [name]:value}));
+       if(name === "username") setUsername(value);
+       if(name === "email") setEmail(value);
+       if(name === "passoword") setPassword(value);
+
     };
-    const handleSubmit =(e) =>{
-        e.preventDefault(); //prevent default submission
-        console.log(formData);
 
         //validate fields
-        const validationErrors = {}
-        if(!formData.username.trim()){
-            validationErrors.username = "username is required"
-        }
-        if(!formData.email.trim()){
-            validationErrors.email = "email is required"
-        }else if (!/\S+@\S+\.\S+/.test(formData.email)){
-              validationErrors.email = "email is required"
-        }
-        if(!formData.password.trim()){
-            validationErrors.password = "password is required"
-        } else if(formData.password.length < 8 ){
-            validationErrors.password = "password should be 8 characters"
-        }
+        const validateForm = (e) =>{
+            const validationErrors={};
 
-        setErrors(validationErrors)
-        if(Object.keys(validationErrors).length === 0){
-            alert("Form submitted successfully")
-        }
+            if(!username.trim()){
+                validationErrors.username = "username is required"
+            }
+            if(!email.trim()){
+                validationErrors.email = "email is required"
+            }else if (!/\S+@\S+\.\S+/.test(email)){
+                  validationErrors.email = "email is required"
+            }
+            if(!password.trim()){
+                validationErrors.password = "password is required"
+            } else if(password.length < 8 ){
+                validationErrors.password = "password should be 8 characters"
+            }
+        
+        setErrors(validationErrors);
+        return Object.keys(validationErrors).length === 0;
     };
+
+            //handle submission
+        const handleSubmit =(e) =>{
+        e.preventDefault(); //prevent default submission
+
+        if(validateForm()){
+        console.log("Form Submitted Successfully:", {username, email, password});
+        alert("Form submitted successfully");
+
+        //reset fields after submission
+        setUsername("");
+        setEmail("");
+        setPassword("");
+        setErrors("")
+    };
+}
+
     return(
         <form onSubmit={handleSubmit}>
 
@@ -45,7 +61,7 @@ const RegistrationForm = () => {
             <input 
             type = "text" 
             name="username"
-            value={formData.username}
+            value={username}
             onChange={handleChange}
             placeholder="name"
             />
@@ -55,7 +71,7 @@ const RegistrationForm = () => {
             <input 
             type = "email"
             name = "email"
-            value={formData.email}
+            value={email}
             onChange={handleChange}
             placeholder="example@email.com"
             />
@@ -65,7 +81,7 @@ const RegistrationForm = () => {
             <input 
             type="password" 
             name="password"
-            value={formData.password}
+            value={password}
             onChange={handleChange}
             placeholder="********"
             />

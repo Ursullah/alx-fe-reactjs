@@ -6,15 +6,6 @@ const RegistrationForm = () => {
     const[password, setPassword] = useState("");
     const[errors, setErrors] = useState({});
 
-//handle input changes
-    const handleChange = (e) => {
-        const {name,value} = e.target;
-       if(name === "username") setUsername(value);
-       if(name === "email") setEmail(value);
-       if(name === "passoword") setPassword(value);
-
-    };
-
         //validate fields
         const validateForm = (e) =>{
             const validationErrors={};
@@ -35,6 +26,15 @@ const RegistrationForm = () => {
         
         setErrors(validationErrors);
         return Object.keys(validationErrors).length === 0;
+    };
+
+    //handle input changes
+    const handleChange = (e) => {
+        const {name,value} = e.target;
+       if(name === "username") setUsername(value);
+       if(name === "email") setEmail(value);
+       if(name === "passoword") setPassword(value);
+
     };
 
             //handle submission

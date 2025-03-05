@@ -10,15 +10,15 @@ const RegistrationForm = () => {
         const validateForm = (e) =>{
             const validationErrors={};
 
-            if(!username.trim()){
+            if(!username){
                 validationErrors.username = "username is required"
             }
-            if(!email.trim()){
+            if(!email){
                 validationErrors.email = "email is required"
             }else if (!/\S+@\S+\.\S+/.test(email)){
                   validationErrors.email = "email is required"
             }
-            if(!password.trim()){
+            if(!password){
                 validationErrors.password = "password is required"
             } else if(password.length < 8 ){
                 validationErrors.password = "password should be 8 characters"

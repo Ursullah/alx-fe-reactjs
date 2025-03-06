@@ -10,8 +10,8 @@ const fetchData = async () =>{
 
 const PostsComponent = () => {
     const{data, error,isError, isLoading} = useQuery({
-        queryKey: ["fetchData"],
-        queryFn: fetchData,
+        queryKey: ["fetchPosts"],
+        queryFn: fetchPosts,
     });
 
     if(isLoading) 
@@ -22,7 +22,10 @@ const PostsComponent = () => {
     return(
         <div>
             {data.map(post => (
-                <div key = {post.id}>{post.title}</div>
+                <div key = {post.id}>
+                    <h3>{post.title}</h3>
+                    <p>post.body</p>
+                </div>
             ))}
         </div>
     );

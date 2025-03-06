@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 
-const fetchData = async () =>{
+const fetchPosts = async () =>{
     const res = await fetch ("https://jsonplaceholder.typicode.com/posts");
     if (!res.ok){
         throw new Error("Network response was not ok");
@@ -12,6 +12,10 @@ const PostsComponent = () => {
     const{data, error,isError, isLoading} = useQuery({
         queryKey: ["fetchPosts"],
         queryFn: fetchPosts,
+        cacheTime: 1000 * 60 * 5, // cache data for 5 minutes
+        staleTime: 1000 * 60, // Data is fresh for 1 minute before refreshing
+        refetchOnWindowFocus: false, //Prevent refetching when switching tabs
+        keepPreviousData: true, // keep old data while fetching new data
     });
 
     if(isLoading) 

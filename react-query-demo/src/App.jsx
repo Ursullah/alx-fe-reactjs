@@ -1,5 +1,5 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import PostComponent from './components/PostComponent';
+import PostsComponent from './components/PostsComponent';
 const queryClient = new QueryClient();
 
 function App(){
@@ -7,7 +7,7 @@ function App(){
     <QueryClientProvider client={queryClient}>
     <div>
       <h1>Posts</h1>
-    <PostComponent />
+    <PostsComponent />
     </div>
     </QueryClientProvider>
   );

@@ -8,7 +8,7 @@ const fetchData = async () =>{
     return res.json();
 };
 
-const PostComponent = () => {
+const PostsComponent = () => {
     const{data, error, isLoading} = useQuery({
         queryKey: ["fetchData"],
         queryFn: fetchData,
@@ -25,4 +25,4 @@ const PostComponent = () => {
         </div>
     );
 };
-export default PostComponent;
+export default PostsComponent;

@@ -1,5 +1,6 @@
 const ProfileSettings = () => {
-    return <h3>Profile Setting Section</h3>;
-}
-
-export default ProfileSettings;
+    return <h3>Profile Settings Section</h3>;
+  };
+  
+  export default ProfileSettings;
+  

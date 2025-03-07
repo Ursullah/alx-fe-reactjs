@@ -1,20 +1,19 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Profile from './components/Profile/Profile';
-import ProfileDetails from './components/Profile/ProfileDetails';
-import ProfileSettings from './components/Profile/ProfileSettings';
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import Home from "./components/Home";
+import Profile from "./components/Profile";
+import BlogPost from "./components/BlogPost";
 
- function App () {
+function App() {
   return (
-  <Router>
-    <Routes>
-        <Route path = "profile" element={<Profile />} >
-        <Route path = "details" element={<ProfileDetails />} />
-        <Route path = "settings" element={<ProfileSettings />} />
-        </Route>
-    </Routes>
-  </Router>
-
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} /> {/* Home Page */}
+        <Route path="profile/*" element={<Profile />} /> {/* Nested Profile Route */}
+        <Route path="blog/:postId" element={<BlogPost />} /> {/* Dynamic Route for Blog Posts */}
+        <Route path="*" element={<Navigate to="/" />} /> {/* Redirect unknown routes */}
+      </Routes>
+    </Router>
   );
- }
+}
 
- export default App;
+export default App;

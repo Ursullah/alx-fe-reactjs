@@ -1,12 +1,16 @@
 import React from 'react'
+import UserProfile from './component/UserProfile'
 
 const App = () => {
   return (
+    <>
     <div>
        <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+          Hello world!
+        </h1>
+        <UserProfile />
     </div>
+    </>
   )
 }
 

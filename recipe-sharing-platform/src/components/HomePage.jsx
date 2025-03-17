@@ -1,21 +1,24 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import data from "../data.json";
 
 
 const HomePage = () => {
     const [recipes,setRecipes] = useState([]);
 
-    useEffect(() => {
-        fetch('/data.json')
-        .then(response =>{
-            if(!response.ok){
-                throw new Error ('Nework response was not ok')
-            }
-            return response.json();
-        })
-        .then (data=>setRecipes(data))
-        .catch(error=>console.error('Fetch error:', error));
-    }, [])
+    useEffect(() => { 
+        setRecipes(data);},
+        []);
+    //     fetch('../data.json')
+    //     .then(response =>{
+    //         if(!response.ok){
+    //             throw new Error ('Nework response was not ok')
+    //         }
+    //         return response.json();
+    //     })
+    //     .then (data=>setRecipes(data))
+    //     .catch(error=>console.error('Fetch error:', error));
+    // }, [])
   return (
     <div>
        <h1>Recipe List</h1>

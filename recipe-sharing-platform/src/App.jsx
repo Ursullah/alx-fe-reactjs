@@ -1,4 +1,5 @@
 import React from 'react'
+import HomePage from './components/HomePage'
 
 const App = () => {
   return (
@@ -7,6 +8,7 @@ const App = () => {
        <h1 class="text-3xl font-bold underline">
        Hello world!
        </h1>
+       <HomePage />
     </div>
     </>
   )

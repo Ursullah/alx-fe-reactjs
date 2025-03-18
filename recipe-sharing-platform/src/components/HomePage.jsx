@@ -9,7 +9,7 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className="p-6 bg-gray-400 min-h-screen">
+    <div className="p-6 bg-gray-400 min-h-screen hover:bg-gray-800">
       <h1 className="text-3xl font-bold text-center mb-6">Recipe List</h1>
       <div>
         {recipes.map((recipe) => (
@@ -17,13 +17,7 @@ const HomePage = () => {
             <h2 className="text-xl font-semibold mt-2">{recipe.title}</h2>
 
             {/* Image Wrapper to Ensure Proper Sizing */}
-            <div>
-              <img
-                  className="min-w-25 min-h-24 rounded-md "
-                src={recipe.image}
-                alt={recipe.title}
-              />
-            </div>
+              <img className="min-w-25 min-h-24 rounded-md "src={recipe.image} alt={recipe.title}/>
 
             <p className="text-gray-600 mt-1">{recipe.summary}</p>
           </div>

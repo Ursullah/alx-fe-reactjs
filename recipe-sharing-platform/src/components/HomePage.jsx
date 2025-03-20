@@ -13,7 +13,7 @@ const HomePage = () => {
       <h1 className="text-4xl font-bold text-center mb-10 text-gray-800">Recipe List</h1>
 
       {/* Responsive Grid Layout */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:grid-cols-1">
         {recipes.map((recipe) => (
           <div 
             key={recipe.id} 

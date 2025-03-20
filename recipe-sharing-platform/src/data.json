@@ -3,25 +3,49 @@
       "id": 1,
       "title": "Spaghetti Carbonara",
       "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
-      "image": "/assets/carbona.jpg"
+      "image": "/assets/carbona.jpg",
+      "ingredients": ["Spaghetti", "Ground beef", "Tomato sauce", "Garlic", "Onion", "Olive oil", "Salt", "Pepper"],
+      "instructions":[ "Cook spaghetti. Brown the beef with garlic and onions. Add tomato sauce. Simmer for 20 minutes. Serve hot."]
     },
     {
       "id": 2,
       "title": "Chicken Tikka Masala",
       "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
-      "image": "/assets/tikka.jpg"
+      "image": "/assets/tikka.jpg",
+      "ingredients": ["Chicken", "Yogurt", "Lemon juice", "Spices", "Tomato sauce", "Cream", "Butter", "Rice"],
+      "instructions":[ "Marinate chicken in yogurt and spices. Grill chicken. Cook tomato sauce with cream and butter. Add chicken. Serve with rice."]
     },
     {
       "id": 3,
       "title": "Spaghetti Bolognese",
       "summary": "A classic Italian pasta dish with rich tomato sauce and ground beef.",
-      "image": "/assets/bolognese.jpg"
+      "image": "/assets/bolognese.jpg",
+      "ingredients": ["Spaghetti", "Ground beef", "Tomato sauce", "Garlic", "Onion", "Olive oil", "Salt", "Pepper"],
+      "instructions":[ "Cook spaghetti. Brown the beef with garlic and onions. Add tomato sauce. Simmer for 20 minutes. Serve hot."]
     },
     {
       "id": 4,
       "title": "Chicken Curry",
       "summary": "A flavorful dish with tender chicken pieces in a creamy curry sauce.",
-      "image": "/assets/curry.jpg"
+      "image": "/assets/curry.jpg",
+      "ingredients": ["Chicken", "Yogurt", "Lemon juice", "Spices", "Tomato sauce", "Cream", "Butter", "Rice"],
+      "instructions":[ "Marinate chicken in yogurt and spices. Grill chicken. Cook tomato sauce with cream and butter. Add chicken. Serve with rice."]
+    },
+    {
+      "id": 5,
+      "title": "Chicken Alfredo",
+      "summary": "A creamy pasta dish with chicken, butter, and Parmesan cheese.",
+      "image": "/assets/alfredo.jpg",
+      "ingredients": ["Fettuccine", "Chicken", "Butter", "Cream", "Parmesan cheese", "Garlic", "Salt", "Pepper"],
+      "instructions":[ "Cook fettuccine. Brown the chicken with garlic. Add butter, cream, and cheese. Simmer for 10 minutes. Serve hot."]
+    },
+    {
+      "id": 6,
+      "title": "Chicken Parmesan",
+      "summary": "Breaded chicken topped with marinara sauce and melted cheese.",
+      "image": "/assets/parmesan.jpg",
+      "ingredients": ["Chicken", "Bread crumbs", "Eggs", "Flour", "Tomato sauce", "Mozzarella cheese", "Parmesan cheese", "Olive oil"],
+      "instructions":[ "Bread chicken with flour, eggs, and bread crumbs. Fry chicken. Top with tomato sauce and cheese. Bake for 20 minutes."]
     }
   ]
   

@@ -80,7 +80,7 @@ const AddRecipeForm = () => {
 
         {/* Instructions */}
         <label className="block">
-         Steps:
+         steps:
           <textarea
             name="instructions"
             value={recipe.instructions}

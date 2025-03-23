@@ -5,19 +5,32 @@ const AddRecipeForm = () => {
     title: '',
     image: '',
     ingredients: '',
-    instructions: '',
+    steps: '',
     summary: ''
   });
+  const [errors, setErrors] = useState({}); 
+
 
   // Validation Function
   const validateRecipe = () => {
     if (!recipe.title) return alert('Please enter a title');
     if (!recipe.image) return alert('Please enter an image URL');
     if (!recipe.ingredients) return alert('Please enter ingredients');
-    if (!recipe.instructions) return alert('Please enter instructions');
+    if (!recipe.steps) return alert('Please enter steps');
     if (!recipe.summary) return alert('Please enter a summary');
+    if(recipe.ingredients.split(',').length < 2) return alert('Please enter at least 2 ingredients');
     return true;
   };
+
+  setErrors({});
+  if (!recipe.title) {
+    setErrors((prev) => ({
+      ...prev,
+      title: 'Please enter a title'
+    }));
+  }
+
+
 
   // Handle Input Change
   const handleChange = (e) => {
@@ -31,7 +44,7 @@ const AddRecipeForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!validateRecipe()) return;
-    console.log(recipe); // Replace this with API call or state update
+    console.log(recipe);
     alert('Recipe added successfully!');
   };
 
@@ -52,6 +65,7 @@ const AddRecipeForm = () => {
             className="w-full p-2 border rounded-md"
           />
         </label>
+        {errors.title && <p className="text-red-500">{errors.title}</p>}
 
         {/* Recipe Image */}
         <label className="block">
@@ -65,6 +79,7 @@ const AddRecipeForm = () => {
             className="w-full p-2 border rounded-md"
           />
         </label>
+        {errors.image && <p className="text-red-500">{errors.image}</p>}
 
         {/* Ingredients */}
         <label className="block">
@@ -77,10 +92,11 @@ const AddRecipeForm = () => {
             className="w-full p-2 border rounded-md"
           />
         </label>
+        {errors.ingredients && <p className="text-red-500">{errors.ingredients}</p>}
 
-        {/* Instructions */}
+        {/*  Steps */}
         <label className="block">
-         steps:
+         Steps:
           <textarea
             name="instructions"
             value={recipe.instructions}
@@ -89,6 +105,7 @@ const AddRecipeForm = () => {
             className="w-full p-2 border rounded-md"
           />
         </label>
+        {errors.steps && <p className="text-red-500">{errors.steps}</p>}
 
         {/* Summary */}
         <label className="block">
@@ -101,6 +118,7 @@ const AddRecipeForm = () => {
             className="w-full p-2 border rounded-md"
           />
         </label>
+        {errors.summary && <p className="text-red-500">{errors.summary}</p>}
 
         {/* Submit Button */}
         <button type="submit" className="w-full p-2 bg-gray-500 text-white rounded-md hover:bg-blue-600 transition">

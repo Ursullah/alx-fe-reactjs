@@ -1,7 +1,6 @@
 import { useState } from "react";
-import fetchGitHubUsers  from "../services/githubService";
-
-const Search = () => {
+import fetchUserData from "../services/githubService";
+function Search() {
   const [username, setUsername] = useState("");
   const [location, setLocation] = useState("");
   const [user, setUser] = useState(null);
@@ -13,12 +12,12 @@ const Search = () => {
     setLoading(true);
     setError("");
     setUser(null);
-    
+
     try {
       if (username.trim() || location.trim()) {
         const query = `${username} location:${location}`.trim();
-        const results = await fetchGitHubUsers(query);
-        
+        const results = await fetchUserData(query);
+
         if (results.length > 0) {
           setUser(results[0]); // Display first user from results
         } else {
@@ -40,20 +39,18 @@ const Search = () => {
           placeholder="GitHub Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          className="border p-2 rounded w-full"
-        />
+          className="border p-2 rounded w-full" />
         <input
           type="text"
           placeholder="Location"
           value={location}
           onChange={(e) => setLocation(e.target.value)}
-          className="border p-2 rounded w-full"
-        />
+          className="border p-2 rounded w-full" />
         <button type="submit" className="bg-blue-500 text-white p-2 rounded">
           Search
         </button>
       </form>
-      
+
       <div className="p-4">
         {loading && <p>Loading...</p>}
         {error && <p className="text-red-500">{error}</p>}
@@ -70,6 +67,6 @@ const Search = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Search;

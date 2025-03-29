@@ -21,11 +21,11 @@ function Search() {
         if (results.length > 0) {
           setUser(results[0]); // Display first user from results
         } else {
-          setError("Looks like we can't find the user");
+          setError("Looks like we cant find the user");
         }
       }
     } catch (err) {
-      setError("Looks like we can't find the user");
+      setError("Looks like we cant find the user");
     } finally {
       setLoading(false);
     }

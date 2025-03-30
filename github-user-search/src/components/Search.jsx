@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { fetchGitHubUsers } from "../services/githubService";
+import fetchGitHubUsers from "../services/githubService";
 
 const fetchUserData = () => {
   const [username, setUsername] = useState("");

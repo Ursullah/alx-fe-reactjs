@@ -18,8 +18,7 @@ const HomePage = () => {
       <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:grid-cols-1">
         {recipes.map((recipe) => (
           <Link key={recipe.id} to={`/recipe/${recipe.id}`} className="block">
-          <div className="bg-white shadow-lg rounded-xl p-6 transform transition duration-300 hover:scale-105 cursor-pointer"
-          >
+          <div className="bg-white shadow-lg rounded-xl p-6 transform transition duration-300 hover:scale-105 cursor-pointer">
             {/* Recipe Title */}
             <h2 className="text-xl font-semibold text-gray-800 mb-4">{recipe.title}</h2>
 
